@@ -1,0 +1,91 @@
+{
+  "reload_style_on_change": true,
+
+  "spacing": 4,
+  "margin-top": 0,
+  "margin-left": 10,
+  "margin-right": 10,
+  "mrgin-bottom": 0,
+  "fixed-center": true,
+
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+
+  "modules-center": [
+  ],
+  
+  "modules-right": [
+    "pulseaudio",
+    "network",
+    "bluetooth",
+    "hyprland/language",
+    // "group/cava-group",
+    "clock"
+  ],
+
+  "clock": {
+    "format": "{:L%d/%m %A %H:%M:%S}",
+    "interval": 1,
+    "tooltip": false
+  },
+
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "format": "{id}"
+  },
+
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": "EN 🇺🇸",
+    "format-he": "HE 🇮🇱",
+    "on-click": ""
+  },
+
+  "bluetooth": {
+    "format": "",
+    "format-disabled": "󰂲",
+    "format-connected": "",
+    "tooltip-format": "Devices connected: {num_connections}",
+    "on-click": "blueberry"
+  },
+
+  "network": {
+    "format-wifi": "{icon}",
+	  "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󰤫",
+    "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "interval": 3,
+    "on-click": "~/.config/waybar/scripts/launch-impala.sh"
+  },
+
+  "pulseaudio": {
+    "format": "{icon}",
+    "on-click": "~/.config/waybar/scripts/launch-wiremix.sh",
+    "on-click-right": "pamixer -t",
+    "tooltip": false,
+    "scroll-step": 5,
+    "format-muted": "",
+    "format-icons": {
+      "default": ["", "", ""]
+    }
+  },
+
+  "group/cava-group": {
+    "orientation": "inherit",
+    "modules": [
+      "custom/cava-icon",
+      "custom/cava"
+    ]
+  },
+  "custom/cava-icon": {
+    "format": " "
+  },
+  "custom/cava": {
+    "format": "{}",
+    "exec": "~/.config/waybar/scripts/cava-bars.sh",
+    "return-type": "text",
+    "interval": 0 // streaming output
+  }
+}

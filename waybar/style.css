@@ -1,0 +1,81 @@
+@import "../omarchy/current/theme/waybar.css";
+
+* {
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  font-family: 'CaskaydiaMono Nerd Font';
+  font-size: 12px;
+  transition: all 0.5s ease;
+}
+
+button {
+}
+
+window#waybar {
+  background-color: rgba(0, 0, 0, 0);
+  color: @foreground;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+}
+
+#workspaces button,
+#clock,
+#language,
+#bluetooth,
+#network,
+#pulseaudio,
+#cava-group {
+  background-color: @background;
+}
+
+#clock,
+#language,
+#bluetooth,
+#network,
+#pulseaudio,
+#cava-group {
+  padding: 4px 10px;
+  border-bottom: 2px solid @theme-pink;
+}
+
+#workspaces button {
+  padding: 0px 8px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+}
+
+#workspaces button.focused {
+  border-bottom: 2px solid @theme-pink;
+}
+
+#workspaces button.active {
+  border-bottom: 2px solid @theme-pink;
+}
+
+#network {
+  font-size: 14px;
+  min-width: 17px;
+  padding-left: 6px;
+}
+
+#pulseaudio {
+  min-width: 16px;
+  padding-left: 5px;
+}
+
+#bluetooth {
+  font-size: 14px;
+  min-width: 12px;
+  padding-left: 9px;
+}
+
+#cava-group {
+  min-width: 160px;
+}
+
+#custom-cava-icon {
+  padding-right: 8px;
+}
